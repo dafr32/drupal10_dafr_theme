@@ -1,0 +1,14 @@
+global-styling:
+  css:
+    theme:
+      css/menu.css: {}
+      css/style.css: {}
+      css/custom.css: {}
+
+  js:    
+    js/main.js: {}
+    
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

@@ -1,0 +1,275 @@
+.offcanvas-body.menu-left {
+    justify-content: start;
+}
+
+.offcanvas-body.menu-center {
+    justify-content: center;
+}
+
+.offcanvas-body.menu-right {
+    justify-content: end;
+}
+
+@media screen and (max-width:998px) {
+    .navbar-expand-lg {        offcanvas-body.menu-center,
+        .offcanvas-body.menu-right {
+            justify-content: start;
+        } 
+    }
+}
+
+
+
+/* ----------------------------------------------------------  */
+/* MENU STICKY */
+/* ----------------------------------------------------------  */
+
+#header {  
+    position: relative;    
+    width: 100%;   
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    z-index: 10;    
+    -webkit-transition: height 0.5s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: height 0.5s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition: height 0.5s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -ms-transition: height 0.5s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition: all 0.5s cubic-bezier(0.000, 0.000, 0.580, 1.000);        
+}
+.toolbar-horizontal #header.header-2,
+.toolbar-horizontal #header.header-3 {
+    top:80px !important;
+}
+
+.fixed-top {
+    position: fixed !important;    
+}
+
+main.header-3 {
+    padding-top: 80px;
+}
+
+#header.hide-up {
+    transform: translateY(-100%);
+}
+
+#header.scroll-up {
+    background-color: rgba(10, 10, 10, .65);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ----------------------------------------------------------  */
+/* MENU TRANSPARENT */
+/* ----------------------------------------------------------  */
+#header.header-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#header.header-2 > .navbar {
+    background-color: transparent !important;
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    padding: 10px;
+    background-color: aliceblue;
+    transition: opacity 0.3s ease;
+    animation: slideIn 0.3s ease forwards;
+    /* Add transition effect for opacity */
+}
+
+/* Show the dropdown menu when its parent is hovered */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-menu.nav-level-1 > .nav-item {
+    padding: 10px 0;
+}
+
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: transparent;
+    color: #222;
+}
+
+.nav-item .dropdown-item a.active {
+    color: #222;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: var(--navbar-light-link);
+}
+
+/* Define animation keyframes */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* search  */
+
+/* SEARCH  */
+#search-form .search-form__icon {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    color: #fff;
+}
+#search-form .search-form__icon svg {
+    width: 20px;
+    height: 20px;
+}
+    
+#search-form:hover {
+    cursor: pointer;
+}
+#search-form:hover .search-form__icon {
+    color: var(--secondary-color) !important;
+}
+#search-form:hover .search-form__icon svg {
+    fill:var(--secondary-color) !important;
+}
+
+.search-popup {
+    position: fixed;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.9);
+    -webkit-transform: translateY(101%);
+    -ms-transform: translateY(101%);
+    transform: translateY(101%);
+    transition: all 700ms ease;
+    -moz-transition: all 700ms ease;
+    -webkit-transition: all 700ms ease;
+    -ms-transition: all 700ms ease;
+    -o-transition: all 700ms ease;
+}
+
+.search-popup.popup-visible {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+}
+.search-popup .close-search {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 22px;
+    color: #ffffff;
+    cursor: pointer;
+    background-image: url(../images/icon/icon-cross.png);
+    width: 40px;
+    height: 40px;
+    z-index: 5;
+    transition: all 500ms ease;
+}
+.search-popup .popup-inner {
+    margin: 0px !important;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    height: 100vh;
+}
+.search-popup .overlay-layer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: block;
+}
+
+.search-popup.popup-visible .search-form {
+    opacity: 1;
+    margin-inline: auto;
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    transition: all 500ms ease 500ms;
+    -moz-transition: all 900ms ease 500ms;
+    -webkit-transition: all 900ms ease 500ms;
+    -ms-transition: all 900ms ease 500ms;
+    -o-transition: all 900ms ease 500ms;
+}
+
+.search-popup .form-search.form-control{
+    border-radius: 3px 0 0 3px;
+    width: 400px;        
+    height: 50px;
+    max-width: 100%;    
+    font-size: 1.2rem;
+    border: 1px solid var(--secondary-color);
+    box-sizing: border-box;    
+}
+
+.search-popup #edit-actions .form-submit.btn-primary {
+    border-radius: 0;
+    height: 50px;
+    background-color: var(--secondary-color) !important;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #fff;
+}
+
+
+/* navbar right  */
+.menu--sidebar-right .nav {
+    flex-direction: column;
+}
+
+.menu--sidebar-right .nav .nav-item {
+    border-bottom: 1px solid #d8d8d8;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.menu--sidebar-right .nav .nav-item:before {
+    content: "\F1C7";
+    font-family: 'Bootstrap Icons';
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.menu--sidebar-right .nav .nav-item a {
+    color:#717171;
+}
+
+.menu--sidebar-right .nav .nav-item:hover a {
+    color: #222;
+}
+
+.menu--sidebar-right .nav .nav-item:hover:before {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}  
